@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title></title>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   color: #DDD8C2;
+}
+ .container {
+   width: 100%;
+   padding-right: 15px;
+   padding-left: 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+ @media screen and (min-width: 481px) {
+   .container {
+     max-width: 540px;
+  }
+}
+ @media screen and (min-width: 769px) {
+   .container {
+     max-width: 720px;
+  }
+}
+ @media screen and (min-width: 981px) {
+   .container {
+     max-width: 960px;
+  }
+}
+ .wm-hero {
+   --duration1: 2.5s;
+   --duration2: calc(var(--duration1) / 2);
+   --delay1: calc(var(--duration2) / 2);
+   --delay2: calc(var(--duration2) + var(--delay1));
+   --easing: cubic-bezier(0.65, 0.05, 0.36, 1);
+   background-color: #1c1c1c;
+   overflow: hidden;
+   text-align: center;
+}
+ .wm-hero h1 {
+   font-size: 36px;
+   font-weight: 600;
+   line-height: 1.2;
+   margin-top: 2em;
+   margin-bottom: 2em;
+   opacity: 0;
+   transform: translateY(3em);
+   animation: loadH1 var(--duration1) var(--easing) var(--delay1) forwards;
+}
+ @media screen and (min-width: 981px) {
+   .wm-hero h1 {
+     font-size: 56px;
+  }
+}
+ .wm-hero img {
+   display: block;
+   max-width: 100%;
+   height: auto;
+   border-radius: 1em 1em 0 0;
+   transform: translateY(100%);
+   animation: loadImg var(--duration2) var(--easing) var(--delay2) forwards;
+}
+ .wm-hero img:hover{
+  transform: scale(1.5);
+ }
+ @keyframes loadH1 {
+   0% {
+     opacity: 0;
+     transform: translateY(3em);
+  }
+   30%, 50% {
+     opacity: 1;
+     transform: translateY(3em);
+  }
+   100% {
+     opacity: 1;
+     transform: none;
+  }
+}
+ @keyframes loadImg {
+   0% {
+     transform: translateY(100%);
+  }
+   100% {
+     transform: none;
+  }
+}
+.splitscreen {
+  display: flex;
+}
+.splitscreen .left,
+.splitscreen .right {
+  flex: 1;
+  transition: transform .2s;
+}
+.splitscreen .left:hover,
+.splitscreen .right:hover{
+  transform: scale(1.5);
+  transition: transform .2s;
+}
+
+</style>
+</head>
+<body">
+  <nav class="menu">
+  <ol>
+    <li class="menu-item"><a href="#">Home</a></li>
+    <li class="menu-item"><a href="#">About</a></li>
+    <li class="menu-item">
+      <a href="#0">Widgets</a>
+      <ol class="sub-menu">
+        <li class="menu-item"><a href="#">Big Widgets</a></li>
+        <li class="menu-item"><a href="#">Bigger Widgets</a></li>
+        <li class="menu-item"><a href="#">Huge Widgets</a></li>
+      </ol>
+    </li>
+    <li class="menu-item">
+      <a href="#0">Kabobs</a>
+      <ol class="sub-menu">
+        <li class="menu-item"><a href="#">Shishkabobs</a></li>
+        <li class="menu-item"><a href="#">BBQ kabobs</a></li>
+        <li class="menu-item"><a href="#">Summer kabobs</a></li>
+      </ol>
+    </li>
+    <li class="menu-item"><a href="#">Contact</a></li>
+  </ol>
+</nav>
+
+
+<div class="wm-hero js-animate">
+  <div class="wm-hero__inner container">
+    <h1>Your one-stop-shop for<br>the best gaming PC's in the market<br><br><div class="btn"><a href="#">Shop Now</a></div></h1>
+    <div class="splitscreen">
+      <div class="left">
+        <img src="pc1.png?w=960&amp;h=600" alt="random cover album" width="480" height="300"/>
+      </div>
+      <div class="right">
+        <img src="pc2.png?w=960&amp;h=600" alt="random cover album" width="480" height="300"/>
+      </div>
+    
+  </div>
+</div>
+</body>
+</html>
